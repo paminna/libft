@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   memcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 11:22:24 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:44:53 by paminna          ###   ########.fr       */
+/*   Created: 2020/10/30 14:34:45 by paminna           #+#    #+#             */
+/*   Updated: 2020/10/30 19:43:16 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char 	cpy[len];
 	int		i;
-	char 	*s;
-	char	*d;
+	char	*str1;
+	char	*str2;
 
 	i = 0;
-	s = (char*)src;
-	d =	(char*)dst;
-	while (i != len)
+	str1 = (char *) s1;
+	str2 = (char *) s2;
+	while (i != n)
 	{
-		cpy[i] = s[i];
+		if (str1[i] > str2[i])
+			return (1);
+		else if (str1[i] < str2[i])
+			return (-1);
 		i++;
 	}
-	i = 0;
-	while (cpy[i])
-	{
-		d[i] = cpy[i];
-		i++;
-	}
-	return (d);
+	return (0);
 }
+
 int		main(void)
 {
-	unsigned char src[10] = "1234567890";
-	printf("src old: %s\n", src);
-	ft_memmove(&src[4], &src[6], 3);
-	printf("my new src: %s\n", src);
-	return (0);
+	char s1[10] = "";
+	char s2[10] = "";
+	printf("%d\n",ft_memcmp(s1, s2, 10));
 }

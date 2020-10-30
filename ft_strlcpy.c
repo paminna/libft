@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 11:22:24 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:44:53 by paminna          ###   ########.fr       */
+/*   Created: 2020/10/30 16:27:10 by paminna           #+#    #+#             */
+/*   Updated: 2020/10/30 19:38:36 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char 	cpy[len];
-	int		i;
-	char 	*s;
-	char	*d;
-
+	int i;
+:q
 	i = 0;
-	s = (char*)src;
-	d =	(char*)dst;
-	while (i != len)
+	while (src[i] != '\0' && i < dstsize)
 	{
-		cpy[i] = s[i];
+		dst[i] = src[i];
 		i++;
 	}
-	i = 0;
-	while (cpy[i])
-	{
-		d[i] = cpy[i];
-		i++;
-	}
-	return (d);
+	if (dstsize == 0) 
+		dst[i] = '\0';
+	return ((size_t) i + 1);
 }
+
 int		main(void)
 {
-	unsigned char src[10] = "1234567890";
-	printf("src old: %s\n", src);
-	ft_memmove(&src[4], &src[6], 3);
-	printf("my new src: %s\n", src);
-	return (0);
+	char *dst = "12342";
+	char *src = "67891";
+
+	size_t a = ft_strlcpy(dst, src, 6);
+	printf("std: %zu\n", a);
 }
