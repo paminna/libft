@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcmp.c                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 14:34:45 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:43:16 by paminna          ###   ########.fr       */
+/*   Updated: 2020/10/31 14:40:31 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -35,6 +37,6 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 int		main(void)
 {
 	char s1[10] = "";
-	char s2[10] = "";
-	printf("%d\n",ft_memcmp(s1, s2, 10));
+	char s2[10] = "12";
+	printf("%d\n",memcmp(s1, s2, 10));
 }

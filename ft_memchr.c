@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:46:43 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 11:21:15 by paminna          ###   ########.fr       */
+/*   Updated: 2020/10/31 14:32:41 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 int		main(void)
 {
-	printf("my mem: %s\n", ft_memchr("", '\0', 10));
-	printf("std: %s\n", memchr("", '\0', 10));
+	printf("my mem: %s\n", ft_memchr(NULL, '\0', 10));
+	printf("std: %s\n", memchr(NULL, '\0', 10));
 }

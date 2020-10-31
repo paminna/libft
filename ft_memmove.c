@@ -1,45 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 11:22:24 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:44:53 by paminna          ###   ########.fr       */
+/*   Updated: 2020/10/31 20:33:47 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	char 	cpy[len];
-	int		i;
-	char 	*s;
-	char	*d;
+    int        i;
+    char     *source;
+    char    *dest;
 
-	i = 0;
-	s = (char*)src;
-	d =	(char*)dst;
-	while (i != len)
-	{
-		cpy[i] = s[i];
-		i++;
-	}
-	i = 0;
-	while (cpy[i])
-	{
-		d[i] = cpy[i];
-		i++;
-	}
-	return (d);
+    source = (char*) src;
+    dest = (char*) dst;
+    i = 0;
+    if (source < dest)
+    {
+        i += len;
+        while (i != 0)
+          {
+            dest[i] = source[i];   
+            i--;
+          }
+    }
+    else if (source > dest)
+    {
+        while (i != len)
+        {
+          dest[i] = source[i];
+          i++;
+        }
+    }
+    return(dest);
 }
-int		main(void)
+int        main(void)
 {
-	unsigned char src[10] = "1234567890";
-	printf("src old: %s\n", src);
-	ft_memmove(&src[4], &src[6], 3);
-	printf("my new src: %s\n", src);
-	return (0);
+    unsigned char src[11] = "1234567890";
+    unsigned char src1[11] = "1234567890";
+    printf("my old: %s\n", src);
+    printf("old: %s\n", src1);
+    ft_memmove(&src[6], &src[4], 3);
+    printf("my new: %s\n", src);
+    memmove(&src1[6], &src1[4], 3);
+    printf("new: %s\n", src1);
+    return (0);
 }
