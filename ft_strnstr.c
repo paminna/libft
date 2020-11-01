@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 14:36:09 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/01 20:57:55 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/01 19:53:03 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/01 21:20:18 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,38 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	char *cpy;
+	const char 	*big;
+	const char 	*little;
+	int 		i;
+	char		cpy[len];
+	int			c;
 
 	i = 0;
-	if (c == '\0')
-		return (NULL);
-	while (s[i])
+	c = 0;
+	big = haystack;
+	little = needle;
+	while (i < len)
 	{
-		if(s[i] == c)
-			return(&s[i]);
+		if (big[i] == little[c])
+		{
+			cpy[c] = big[i];
+			c++;
+		}
 		i++;
 	}
+	return (&cpy[c]);
 }
+
 int		main(void)
 {
-	int	ch = '3';
-	char *s = "123456";
-	printf("%s\n", ft_strchr (s, ch));
+	char 	*little;
+	char 	*big;
+	int 	len;
+
+	little = "678";
+	big = "1234567890";
+	len = 11;
+	printf("%s\n", ft_strnstr(big,little,len));
 }
