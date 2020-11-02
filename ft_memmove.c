@@ -6,17 +6,16 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 11:22:24 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/31 20:33:47 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:00:14 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-    int        i;
+    size_t        i;
     char     *source;
     char    *dest;
 
@@ -28,7 +27,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
         i += len;
         while (i != 0)
           {
-            dest[i] = source[i];   
+            dest[i-1] = source[i-1];   
             i--;
           }
     }

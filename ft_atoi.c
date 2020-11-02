@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 13:56:01 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/02 19:51:08 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/02 20:15:54 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/02 20:54:09 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
-#include <strings.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	char 	*str;
-	size_t 	i;
+ int	atoi(const char *str)
+ {
+	int i;
+	int res;
+	int sign;
 
+	sign = 1;
 	i = 0;
-	str = (char*)s;
-	while(i != n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	s = str;
-}
-
-int		main(void)
-{
-	char *s = (char*)malloc (10);
-	s = "123456789";
-	bzero(s,3);
-	//printf("%s\n", s);
-}
+	if (str[i] == '-')
+		sign = -1;
+	while (str[i] )
+ }

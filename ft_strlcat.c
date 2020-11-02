@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:24:49 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:38:39 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:01:18 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int 	i;
+	size_t 	i;
 	int		c;
-	char 	*s;
+	char 	s[dstsize];
 
 	i = 0;
 	c = 0;

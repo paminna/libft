@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:27:10 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 19:38:36 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/02 20:23:59 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
-:q
+	size_t i;
+
 	i = 0;
-	while (src[i] != '\0' && i < dstsize)
+	while (src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	if (dstsize == 0) 
 		dst[i] = '\0';
-	return ((size_t) i + 1);
+	return (i);
 }
 
 int		main(void)
 {
-	char *dst = "12342";
-	char *src = "67891";
+	char dst[5];
+	const char *src = "";
 
-	size_t a = ft_strlcpy(dst, src, 6);
+	size_t a = ft_strlcpy(dst, src, 2);
 	printf("std: %zu\n", a);
 }

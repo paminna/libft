@@ -1,44 +1,34 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 14:36:20 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/01 21:06:54 by paminna          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h> 
 
 char *ft_strrchr(const char *s, int c)
 {
 	int 	i;
-	char	*res;
+	const char	*res;
 	int		k;
 
-	k = 0;
 	i = 0;
+	k = 0;
 	if (s == '\0')
 		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == c)
 		{
-			res[k] = s[i];
-			k++;
-		}
+			k = 1;
+			res = &s[i];
+		}	
 		i++;
 	}
-	return (&res[k]);
+	if (k == 1)
+		return ((char*)res);
+	return(0);
 }
-
 int		main(void)
 {
-	int	ch = '3';
+	int ch = '3';
 	char *s = "123436";
-	printf("%s\n",ft_strrchr (s, ch));
+	printf("%s\n", ft_strrchr (s, ch));
 }
+
