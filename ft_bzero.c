@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:56:01 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/02 19:51:08 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/03 20:51:46 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char 	*str;
-	size_t 	i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
 	str = (char*)s;
-	while(i != n)
+	while (i != n)
 	{
 		str[i] = '\0';
 		i++;
@@ -29,6 +29,7 @@ void	ft_bzero(void *s, size_t n)
 	s = str;
 }
 
+/*
 int		main(void)
 {
 	char *s = (char*)malloc (10);
@@ -36,3 +37,4 @@ int		main(void)
 	bzero(s,3);
 	//printf("%s\n", s);
 }
+*/

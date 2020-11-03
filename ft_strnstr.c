@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:53:03 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/02 20:59:12 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/03 18:32:15 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 	little = needle;
 	while (big[i] != little[c])
 			i++;
-	while (big[i])
+	while (big[i] == little[c])
 	{
 		cpy[c] = big[i];
 		printf("circle: %c\n", cpy[c]);
@@ -36,7 +36,9 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	cpy[c] = '\0';
-	return ((char*)cpy);
+	c = 0;
+	big = cpy;
+	return ((char*)&big[c]);
 }
 
 int		main(void)
@@ -45,7 +47,7 @@ int		main(void)
 	char 	*big;
 	int 	len;
 
-	little = "678";
+	little = "679";
 	big = "1234567890";
 	len = 11;
 	printf("%s\n", ft_strnstr(big,little,len));

@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 14:34:45 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/03 20:50:57 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/03 17:44:53 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/03 20:51:19 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_isdigit(int c)
 {
-	size_t		i;
-	char		*str1;
-	char		*str2;
-
-	i = 0;
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	while (i != n)
-	{
-		if (str1[i] > str2[i])
-			return (1);
-		else if (str1[i] < str2[i])
-			return (-1);
-		i++;
-	}
+	if (c >= '0' && c <= '9')
+		return (1);
 	return (0);
 }
 /*
-int		main(void)
+int main(void)
 {
-	char s1[10] = "";
-	char s2[10] = "12";
-	printf("%d\n",memcmp(s1, s2, 10));
-}*/
+	printf("%d\n", isdigit('a'));
+	printf("%d\n", ft_isdigit('a'));
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:37:18 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/31 14:38:15 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/03 19:52:47 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char *d;
     const char *s;
-    int i;
+    size_t i;
 
     i = -1;
     s = src;
