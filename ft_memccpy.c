@@ -6,47 +6,36 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:36:27 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/03 20:51:17 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/04 22:03:07 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	const char	*s;
-	char		*dest;
-	size_t		i;
+	unsigned char	*s;
+	unsigned char	*d;
+	size_t			i;
+	int			check;
 
+	check = 1;
 	i = 0;
-	s = src;
-	dest = dst;
-	while (i < n - 1)
+	s = (unsigned char *)src;
+	d = (unsigned char *)dst;
+	while (n--)
 	{
+		d[i] = s[i];
 		if (s[i] == c)
+		{
+			check = 0;
 			break ;
-		dest[i] = s[i];
+		}
 		i++;
 	}
-	dest[i] = c;
-	while (s[i] != '\0')
-	{
-		dest[i] = dest[i];
-		i++;
-	}
-	dest[i] = '\0';
-	dst = dest;
-	return (dst);
+
+	if (check == 0)
+		return (d);
+	return (NULL);
 }
-/*
-int		main(void)
-{
-	unsigned char dst[10] =  "Hello";
- 	unsigned char src[10] = "World";
- 	printf("before: %s\n", dst);
- 	ft_memccpy (dst, src, 'o', 10);
- 	printf("after: %s\n", dst);
-}
-*/
+

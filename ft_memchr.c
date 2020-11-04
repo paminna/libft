@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:46:43 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/03 20:51:10 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:37:08 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = (char*)s;
-	if (s == NULL)
-		return (NULL);
-	while (str && i != n)
+	while (i != n)
 	{
 		if (str[i] == c)
 			return (&str[i]);
@@ -31,9 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int		main(void)
-{
-	printf("my mem: %s\n", ft_memchr(NULL, '\0', 10));
-	printf("std: %s\n", memchr(NULL, '\0', 10));
-}*/

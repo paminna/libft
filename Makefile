@@ -6,7 +6,7 @@
 #    By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/20 12:14:49 by paminna           #+#    #+#              #
-#    Updated: 2020/11/03 20:28:46 by paminna          ###   ########.fr        #
+#    Updated: 2020/11/04 20:24:32 by paminna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,9 @@ CFLAGS = -Wall -Wextra -Werror
 .c.o:
 			 	${CC} ${CFLAGS} -c $< 
 
-${NAME}:		${OBJS}
-				${CC} -o ${NAME} ${OBJS}
-				${AR} ${NAME} ${RUN}
+$(NAME):		${OBJS}
+				${AR} ${NAME} ${OBJS}
+				${RUN} ${NAME} 
 
 all:${NAME}
 

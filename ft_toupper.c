@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 19:39:53 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/03 19:44:48 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/04 19:36:22 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
-}
-
-int	main(void)
-{
-	printf("%d\n", toupper('b'));
-	printf("%d\n", ft_toupper('b'));
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

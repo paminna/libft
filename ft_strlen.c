@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:03:49 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/30 16:13:43 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/04 17:44:12 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,4 @@ size_t	ft_strlen(const char *s)
 		i++;
 	i = (size_t) i;
 	return (i);
-}
-
-int	main(void)
-{
-	printf("len: %zu\n", strlen("132456"));
-	printf("my len: %zu\n", ft_strlen("132456"));
 }

@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 19:45:18 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/03 19:45:46 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/04 19:35:43 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 
 int	ft_tolower(int c)
 {
-	return (c + 32);
-}
-
-int	main(void)
-{
-	printf("%d\n", tolower('B'));
-	printf("%d\n", ft_tolower('B'));
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
