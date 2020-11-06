@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:53:03 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/04 17:59:53 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/06 16:25:31 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char 	*big;
-	const char 	*little;
-	int			i;
-	char		cpy[len];
-	int			c;
+    int         i;
+    int         c;
+    int         l;
 
-	i = 0;
-	c = 0;
-	big = haystack;
-	little = needle;
-	while (big[i] != little[c])
-			i++;
-	while (big[i] == little[c])
-	{
-		cpy[c] = big[i];
-		c++;
-		i++;
-	}
-	cpy[c] = '\0';
-	c = 0;
-	big = cpy;
-	return ((char*)&big[c]);
+    l = 0;
+    i = 0;
+    c = 0;
+    len = 0;
+	// if (haystack[i] == '\0')
+	// 	return ((char*)&haystack[i]);
+	// else if (needle[i] == '\0')
+	// 	return ((char*)&needle[i]);
+    while (haystack[i] != needle[i])
+        i++;
+    while (haystack[i] == needle[i])
+    {
+		l++;
+        i++;
+    }
+    if (l != (int)strlen(needle))
+        return (NULL);
+    return ((char*)&haystack[i]);
 }

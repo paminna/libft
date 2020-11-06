@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 13:56:01 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/06 17:13:25 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/06 16:40:07 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/06 17:27:11 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	char	*str;
-	size_t	i;
+	char 	*buffer;
 
-	i = 0;
-	str = (char*)s;
-	while (i != n)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	buffer = (char*)malloc(ft_strlen(s1) + 1);
+	if (buffer)
+		return (buffer);
+	return NULL;
 }
