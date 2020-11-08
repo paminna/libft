@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:36:27 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/07 12:02:11 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/08 16:25:09 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	char	*s;
 	char	*d;
-	size_t			i;
-	int			check;
+	size_t	i;
+	int		check;
 
 	check = 1;
 	i = 0;

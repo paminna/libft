@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:36:09 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/04 19:28:55 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/08 16:30:35 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if(s[i] == c)
+		if (s[i] == c)
 			return ((char*)&s[i]);
 		i++;
 	}
 	if (s[i] == c)
 		return ((char*)&s[i]);
-	return(0);
+	return (0);
 }

@@ -6,19 +6,19 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 19:55:55 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/04 19:40:09 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/08 16:46:13 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h> 
+#include <string.h>
 
-char *ft_strrchr(const char *s, int c)
+char			*ft_strrchr(const char *s, int c)
 {
-	int 	i;
+	int			i;
 	const char	*res;
-	int		k;
+	int			k;
 
 	i = 0;
 	k = 0;
@@ -28,15 +28,15 @@ char *ft_strrchr(const char *s, int c)
 		{
 			k = 1;
 			res = &s[i];
-		}	
+		}
 		i++;
 	}
 	if (s[i] == c)
-	{		
+	{
 		k = 1;
 		res = &s[i];
 	}
 	if (k == 1)
 		return ((char*)res);
-	return(0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:03:49 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/04 17:44:12 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/08 14:50:53 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int 	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	i = (size_t) i;
 	return (i);
 }
