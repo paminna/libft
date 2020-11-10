@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 16:27:10 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/08 16:52:53 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/10 20:40:48 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/10 21:21:39 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
-
-	i = 0;
-	if (src == NULL)
-		return (0);
-	if (dstsize > 0)
-	{
-		while (src[i] && (dstsize - i - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	while (src[i])
-		i++;
-	return (i);
+    int        i;
+    int     j;
+    
+    i = 0;
+    j = 0;
+    if (s1 == NULL || set == NULL)
+        return (NULL);
+    while (s1[i])
+    {
+        if(ft_strchr(s1,set[j]) == NULL)
+            break;
+    }
+    return (0);
 }
