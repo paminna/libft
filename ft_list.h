@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/10 20:40:48 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/13 23:59:40 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/14 09:57:47 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/14 10:31:16 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-char *ft_strtrim(char const *s1, char const *set)
+typedef struct		s_list
 {
-    int     i;
-    int     j;
-    int     start;
-    
-    i = 0;
-    j = 0;
-    if (s1 == NULL || set == NULL)
-        return (NULL);
-    while (s1[i])
-    {
-        if(ft_strchr(s1,set[j]) != NULL)
-            start = i;
-        i++;
-    }
-    j = ft_strlen(set);
-    return (ft_substr(s1, start,set[j]));
-}
+	void			*content; 
+	struct s_list	*next; 
+}					t_list;
+
+#endif

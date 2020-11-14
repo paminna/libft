@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 12:13:05 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/10 20:43:06 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/14 10:15:05 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+#include <fcntl.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -42,5 +43,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s1, char const *set);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_putchar_fd(char c, int fd);
 
 #endif

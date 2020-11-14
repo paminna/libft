@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/10 20:40:48 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/13 23:59:40 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/14 10:29:15 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/14 10:32:42 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "ft_list.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    int     i;
-    int     j;
-    int     start;
-    
-    i = 0;
-    j = 0;
-    if (s1 == NULL || set == NULL)
-        return (NULL);
-    while (s1[i])
-    {
-        if(ft_strchr(s1,set[j]) != NULL)
-            start = i;
-        i++;
-    }
-    j = ft_strlen(set);
-    return (ft_substr(s1, start,set[j]));
+	t_list *elem;
+	t_list *list_cpy;
+
+	*list_cpy = **lst;
+	*elem = ft_lstnew(new);
+	while (*lst->next != 0)
+		*lst = *lst->next;
+	*lst = elem;
 }
