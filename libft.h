@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 12:13:05 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 10:15:05 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/14 16:07:45 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 #include <fcntl.h>
+
+typedef struct		s_list
+{
+	void			*content; 
+	struct s_list	*next; 
+}					t_list;
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -41,9 +47,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char *ft_strjoin(char const *s1, char const *s2);
-char *ft_strtrim(char const *s1, char const *set);
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void ft_putchar_fd(char c, int fd);
+char 	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_strtrim(char const *s1, char const *set);
+char 	*ft_itoa(int n);
+char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void 	ft_putchar_fd(char c, int fd);
+void 	ft_putstr_fd(char *s, int fd);
+void 	ft_putendl_fd(char *s, int fd);
+t_list 	*ft_lstnew(void *content);
+int		ft_list_size(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_list_last(t_list *lst);
 
 #endif

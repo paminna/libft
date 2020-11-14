@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 10:03:59 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 10:20:07 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/14 14:39:27 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void ft_putchar_fd(char c, int fd)
 {
-	fd = open (&c, O_RDWR);
-	fd = write(1, &c, 1);
+	int i;
+
+	i = write(fd, &c, 1);
 }
