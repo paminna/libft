@@ -6,48 +6,50 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 15:32:52 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 15:57:12 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/15 19:32:09 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char *swap(char *res, int len)
+int n_len(int n)
 {
-	char *swap;
-	int i;
+	int len;
 
-	swap = (char*)malloc(len);
-	i = 0;
-	while (res[len--] != '\0')
+	len = 0;
+	if (n < 0 || n == 0)
+		len = 1;
+	while(n)
 	{
-		swap[i] = res[len];
-		i++;
+		n = n/10;
+		len++;
 	}
-	return (swap);
+	return (len);
 }
 char *ft_itoa(int n)
 {
 	char *res;
-	int i;
 	int len;
+	unsigned int nbr;
 
-	res = (char*)malloc(n);
+	nbr = n;
+	len = n_len(n);
+	res = (char*)malloc(len + 1);
 	if (res == 0)
 		return (NULL);
-	i = 0;
+	res[len--] = '\0';
 	if (n < 0)
-		res[i] = '-';
-	if (n == 0)
-		res[i] = 0;
-	while (n)
 	{
-		res[i] = n%10;
-		n = n - res[i] * 10;
-		i++;
+		res[0] = '-';
+		nbr = n * -1;
 	}
-	len = i;
-	res = swap (res,len);
-	res[i] = '\0';
+	if (n == 0)
+		res[0] = '0';
+	while (nbr != 0)
+	{
+		res[len--] = nbr % 10 + '0';
+		nbr /= 10;
+	}
 	return (res);
 }

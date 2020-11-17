@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 12:13:05 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 16:07:45 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/17 17:32:18 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,14 @@ char 	*ft_strtrim(char const *s1, char const *set);
 char 	*ft_itoa(int n);
 char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void 	ft_putchar_fd(char c, int fd);
+char 	**ft_split(char const *s, char c);
 void 	ft_putstr_fd(char *s, int fd);
 void 	ft_putendl_fd(char *s, int fd);
+void 	ft_putnbr_fd(int n, int fd);
 t_list 	*ft_lstnew(void *content);
-int		ft_list_size(t_list *lst);
+int		ft_lstsize(t_list *lst);
+void 	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_list_last(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif

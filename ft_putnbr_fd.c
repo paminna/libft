@@ -6,22 +6,26 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:08:10 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 16:09:34 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/16 22:51:46 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
-	int f;
-	int help;
+	char	res;
 
-	help = 0;
-	i = 0;
-	while (n)
+	if (n > -10 && n < 10)
 	{
-
+		if (n < 0)
+			write(fd, "-", 1);
 	}
+	else
+		ft_putnbr_fd(n / 10, fd);
+	if (n < 0)
+		res = -1 * (n % 10) + '0';
+	else
+		res = 1 * (n % 10) + '0';
+	write(fd, &res, 1);
 }

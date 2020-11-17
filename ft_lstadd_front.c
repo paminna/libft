@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 12:43:43 by paminna           #+#    #+#             */
-/*   Updated: 2020/10/26 14:13:59 by paminna          ###   ########.fr       */
+/*   Created: 2020/11/17 17:29:12 by paminna           #+#    #+#             */
+/*   Updated: 2020/11/17 17:40:11 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
+#include "libft.h"
 
-int main(void)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char tmp[14] = "Hello, World!";
-	printf ("%s\n", bzero(tmp, 5));
+	t_list	*elem;
+
+	elem = *lst;
+	new->next = elem;
+	(*lst)->next = new;
 }
