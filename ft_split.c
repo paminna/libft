@@ -6,7 +6,7 @@
 /*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:57:50 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/18 21:40:36 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/19 00:08:59 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,51 +54,42 @@ int count_len(char const *s, char c)
 	return (len);
 }
 
+char **ft_clear_split(char **word)
+{
+	int i = 0;
+	while (word[i] != NULL)
+	{
+		free(word[i]);
+		i++;
+	}
+	free(word);
+	return (NULL);
+}
+
 char **ft_split(char const *s, char c)
 {
     char **words;
     int i;
-    int len;
     int j;
     int k;
 
     k = 0;
-    i = 0;
+    i = -1;
     if (s == NULL)
         return (NULL);
-    len = word_counter(s,c);
-    words = (char**)malloc((len + 1) * sizeof(char *));
-    if (words == 0)
+    if ((words = (char**)malloc((word_counter(s,c) + 1) * sizeof(char *))) == 0)
         return (NULL);
-    while (i != len)
+    while (i++ != word_counter(s,c))
     {
         j = 0;
-        words[i] = (char*)malloc(count_len(&s[k], c));
+        if ((words[i] = (char*)malloc(count_len(&s[k], c))) == NULL)
+			return (ft_clear_split(words));
 		while (s[k] == c)
             k++;
         while (s[k] != c && s[k] != '\0')
-        {
-            words[i][j] = s[k];
-            j++;
-            k++;
-        }
+            words[i][j++] = s[k++];
         words[i][j + 1] = '\0';
-        i++;
     }
-	words[len] = NULL;
+	words[word_counter(s,c)] = NULL;
     return (words);
 }
-
-// int main()
-// {
-//     char **res;
-    
-//     char string[] = "split  ||this|for|me|||||!|";
-//     res = ft_split(string, '|');
-//     printf("%s\n", res[0]);
-//     printf("%s\n", res[1]);
-//     printf("%s\n", res[2]);
-//     printf("%s\n", res[3]);
-//     printf("%s\n", res[4]);
-//     printf("%s\n", res[5]);
-// }
