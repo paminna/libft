@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:57:50 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/17 17:07:36 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/18 21:40:36 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,18 @@ char **ft_split(char const *s, char c)
     int j;
     int k;
 
-    j = 0;
-    i = 0;
     k = 0;
+    i = 0;
     if (s == NULL)
         return (NULL);
     len = word_counter(s,c);
-    words = (char**)malloc(len + 1);
-    if (words == 0 || len == 0)
+    words = (char**)malloc((len + 1) * sizeof(char *));
+    if (words == 0)
         return (NULL);
     while (i != len)
     {
-        words[i] = (char*)malloc(count_len(s, c));
+        j = 0;
+        words[i] = (char*)malloc(count_len(&s[k], c));
 		while (s[k] == c)
             k++;
         while (s[k] != c && s[k] != '\0')
@@ -82,14 +82,23 @@ char **ft_split(char const *s, char c)
             j++;
             k++;
         }
+        words[i][j + 1] = '\0';
         i++;
     }
 	words[len] = NULL;
     return (words);
 }
 
-int main()
-{
-    char *string = "lorem ipsum";
-    ft_split(string, 'i');
-}
+// int main()
+// {
+//     char **res;
+    
+//     char string[] = "split  ||this|for|me|||||!|";
+//     res = ft_split(string, '|');
+//     printf("%s\n", res[0]);
+//     printf("%s\n", res[1]);
+//     printf("%s\n", res[2]);
+//     printf("%s\n", res[3]);
+//     printf("%s\n", res[4]);
+//     printf("%s\n", res[5]);
+// }
