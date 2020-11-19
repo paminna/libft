@@ -6,32 +6,32 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 15:32:52 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/15 19:32:09 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:26:57 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int n_len(int n)
+int		n_len(int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n < 0 || n == 0)
 		len = 1;
-	while(n)
+	while (n)
 	{
-		n = n/10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
-	char *res;
-	int len;
-	unsigned int nbr;
+	char			*res;
+	int				len;
+	unsigned int	nbr;
 
 	nbr = n;
 	len = n_len(n);
@@ -49,7 +49,7 @@ char *ft_itoa(int n)
 	while (nbr != 0)
 	{
 		res[len--] = nbr % 10 + '0';
-		nbr /= 10;
+		nbr = nbr / 10;
 	}
 	return (res);
 }

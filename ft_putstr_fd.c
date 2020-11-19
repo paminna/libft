@@ -6,13 +6,13 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:00:35 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/14 17:23:41 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:23:16 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int i;
 	int f;
@@ -22,7 +22,7 @@ void ft_putstr_fd(char *s, int fd)
 		return ;
 	while (s[i] != '\0')
 	{
-		f = write(fd,&s[i],1);
+		f = write(fd, &s[i], 1);
 		i++;
 	}
 }

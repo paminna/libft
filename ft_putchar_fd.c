@@ -6,13 +6,13 @@
 /*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 10:03:59 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/15 18:35:29 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:33:44 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	int i;
 

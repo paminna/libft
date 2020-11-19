@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paminna <paminna@stud.21-school.ru>        +#+  +:+       +#+        */
+/*   By: paminna <paminna@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 20:15:54 by paminna           #+#    #+#             */
-/*   Updated: 2020/11/18 23:52:59 by paminna          ###   ########.fr       */
+/*   Updated: 2020/11/19 13:18:13 by paminna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int check_long(int sign)
+int				check_long(int sign)
 {
-	if (sign == -1)	
+	if (sign == -1)
 		return (0);
 	return (-1);
 }
@@ -41,7 +41,7 @@ int				ft_atoi(const char *str)
 		tmp = res;
 		res = res * 10 + str[i] - '0';
 		if (tmp > res && i != 0)
-			return(check_long(sign));
+			return (check_long(sign));
 		i++;
 	}
 	res = res * sign;
